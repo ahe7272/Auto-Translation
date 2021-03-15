@@ -1,0 +1,110 @@
+# Auto-Translation
+It reads a text file and translates automatically and saves the outcome to excel file using Google, Papago and Flitto.
+
+# Before using those, you will need on your environment...
+-Python3.7 
+-openpyxl
+-selenium
+-pandas 
+-chormedriver
+-chrome webbrowser
+
+# How to use
+Check your chrome browser version and download chromedriver matching the version.
+
+**Google**
+  -in line 23, 
+  *Windows*
+  copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  *Mac*
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  -When you run the python3 google.py on your terminal it will print a qustion in Korean with language codes. '어떤 언어로 번역할까요? (입력 가능 언어: ar, de, en, fr, it, ja, ko, mn, ru, sv, vi, zh)'(Which language you would like to translate to?). That's asking what language you would want to translate to. So you put in the language code available in the qustion on terminal.
+  
+  -then It will open google traslate web page with the language you chose for output language.
+
+  -another question in korean, '몇 줄 씩 번역할까요?(숫자만 입력해 주세요)'(How many lines would you like to translate at a time?(numbers only)). So please put numbers of the line you would want to translate. (50 or lower is recommended for character limits).
+  
+  -it will translate until it reaches the bottom line of the text file or any interrupt happens. 
+  (*if you scroll on the opened page or type something it can make an error.)
+  
+  -once the translation is finished or interrupted, it will make an excel file with the translated lines. As you can see, you will find it is not saves as one column. You can use colcombiner.py to make it into one column. Please refer to **colcombiner** to combine column. 
+  
+**papago**
+  -in line 55,
+  *Windows*
+  copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  *Mac*
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  -When you run the python3 papago.py on your terminal it will print a qustion in Korean with language codes. '어떤 언어로 번역할까요? (입력 가능 언어: ar, de, en, fr, it, ja, ko, mn, ru, sv, vi, zh)'(Which language you would like to translate to?). That's asking what language you would want to translate to. So you put in the language code available in the qustion on terminal.
+  
+  -then It will open papago traslate web page with the language you chose for output language.
+
+  -another question in korean, '몇 줄 씩 번역할까요?(숫자만 입력해 주세요)'(How many lines would you like to translate at a time?(numbers only)). So please put numbers of the line you would want to translate. (50 or lower is recommended for character limits).
+  
+  -it will translate until it reaches the bottom line of the text file or any interrupt happens. 
+  (*if you scroll on the opened page or type something it can make an error.)
+  
+  -once the translation is finished or interrupted, it will make an excel file with the translated lines. As you can see, you will find it is not saves as one column. You can use colcombiner.py to make it into one column. Please refer to **colcombiner** to combine column. 
+  
+**flitto**
+  -in line 60,
+  *Windows*
+  copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  *Mac*
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  -When you run the python3 flitto.py on your terminal it will print a qustion in Korean with language codes. '어떤 언어로 번역할까요? (입력 가능 언어: ar, de, en, fr, it, ja, ko, mn, ru, sv, vi, zh)'(Which language you would like to translate to?). That's asking what language you would want to translate to. So you put in the language code available in the qustion on terminal.
+  
+  -then It will open flitto traslate web page with the language you chose for output language.
+
+  -another question in korean, '몇 줄 씩 번역할까요?(숫자만 입력해 주세요)'(How many lines would you like to translate at a time?(numbers only)). So please put numbers of the line you would want to translate. (50 or lower is recommended for character limits).
+  
+  -it will translate until it reaches the bottom line of the text file or any interrupt happens. 
+  (*if you scroll on the opened page or type something it can make an error.)
+  
+  -once the translation is finished or interrupted, it will make an excel file with the translated lines. As you can see, you will find it is not saves as one column. You can use colcombiner.py to make it into one column. Please refer to **colcombiner** to combine column. 
+  
+**all_tran**
+  it is useful when you want to run 2 or more translator at the same time. 
+
+  -in line 80, 202, 209,
+  *Windows*
+  copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  *Mac*
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  -When you run the python3 all_tran.py on your terminal it will print a qustion in Korean. '어떤 번역기를 사용할까요?(gp:google + papago, gf:google + flitto, pf: papago + flitto  a:all)'(Which translator would like to use?). That's asking what tranlator combination you would want to run.
+  
+  -then it will print a qustion in Korean with language codes. '어떤 언어로 번역할까요? (입력 가능 언어: ar(papago불가), de, en, fr, it, ja, ko, mn(papago, flitto불가), ru, sv(papago불가), vi, zh)'(Which language you would like to translate to?). That's asking what language you would want to translate to(some language code are not supported on certain translator. for example if you type 'ar' code for papago translator then this program will be terminated and you will have to run again.) So you put in the language code available in the qustion on terminal.
+  
+  -then It will open traslate web pages that you chose with the language you chose for output language.
+
+  -another question in korean, '몇 줄 씩 번역할까요?(숫자만 입력해 주세요)'(How many lines would you like to translate at a time?(numbers only)). So please put numbers of the line you would want to translate. (50 or lower is recommended for character limits).
+  
+  -it will translate until it reaches the bottom line of the text file or any interrupt happens. 
+  (*if you scroll on the opened page or type something it can make an error.)
+  
+  -once the translation is finished or interrupted, it will make an excel file with the translated lines. As you can see, you will find it is not saves as one column. You can use colcombiner.py to make it into one column. Please refer to **colcombiner** to combine column. 
+  
+**colcombiner**
+  -in line 3, put the excel file name you want to combine columns of.
+  
+  -Then on terminal enter 'python3 colcombiner.py > combined.txt' to save the combined outcome in to text file. you can change combined.txt to any name as you want on terminal. 
+  
+
+
+  

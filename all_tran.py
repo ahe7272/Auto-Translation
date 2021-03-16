@@ -4,24 +4,11 @@ import time
 import pandas as pd 
 from pandas import DataFrame
 from selenium.webdriver.common.keys import Keys
+from googleTranslator import googleTranslator
 
 g_translated = []
 p_translated = []
 f_translated = []
-
-#Google 언어 설정 변수
-auto_ar = 'https://translate.google.co.kr/?sl=auto&tl=ar&op=translate'
-auto_de = 'https://translate.google.co.kr/?sl=auto&tl=de&op=translate'
-auto_en = 'https://translate.google.co.kr/?sl=auto&tl=en&op=translate'
-auto_fr = 'https://translate.google.co.kr/?sl=auto&tl=fr&op=translate'
-auto_it = 'https://translate.google.co.kr/?sl=auto&tl=it&op=translate'
-auto_ja = 'https://translate.google.co.kr/?sl=auto&tl=ja&op=translate'
-auto_ko = 'https://translate.google.co.kr/?sl=auto&tl=ko&op=translate'
-auto_mn = 'https://translate.google.co.kr/?sl=auto&tl=mn&op=translate'
-auto_ru = 'https://translate.google.co.kr/?sl=auto&tl=ru&op=translate'
-auto_sv = 'https://translate.google.co.kr/?sl=auto&tl=sv&op=translate'
-auto_vi = 'https://translate.google.co.kr/?sl=auto&tl=vi&op=translate'
-auto_zh = 'https://translate.google.co.kr/?sl=auto&tl=zh-CN&op=translate'
 
 #Papago 언어 설정 변수
 papago_de = '//*[@id="ddTargetLanguage"]/div[2]/ul/li[8]/a/span'
@@ -73,51 +60,6 @@ while True:
     print('가능한 옵션을 다시 입력해주세요.')
 
 trans_lan = input('어떤 언어로 번역할까요? (입력 가능 언어: ar(papago불가), de, en, fr, it, ja, ko, mn(papago, flitto불가), ru, sv(papago불가), vi, zh)')
-
-while google == True:
-  #Google 기본 설정
-  google_link = 'https://translate.google.co.kr/?hl=ko&sl=auto&tl=ko&op=translate'
-  google_driver = webdriver.Chrome(r'/mnt/c/Users/ccc/Desktop/DATA/DATA_EXTRACT/TED Parsing/chromedriver.exe')
-
-  if trans_lan == 'ar':
-    google_driver.get(auto_ar)
-    break
-  elif trans_lan == 'de': 
-    google_driver.get(auto_de)
-    break  
-  elif trans_lan == 'en': 
-    google_driver.get(auto_en)
-    break
-  elif trans_lan == 'fr': 
-    google_driver.get(auto_fr)
-    break
-  elif trans_lan == 'it': 
-    google_driver.get(auto_it)
-    break
-  elif trans_lan == 'ja': 
-    google_driver.get(auto_ja)
-    break
-  elif trans_lan == 'ko': 
-    google_driver.get(auto_ko)
-    break    
-  elif trans_lan == 'mn': 
-    google_driver.get(auto_mn)
-    break
-  elif trans_lan == 'ru': 
-    google_driver.get(auto_ru)
-    break
-  elif trans_lan == 'sv': 
-    google_driver.get(auto_sv)
-    break
-  elif trans_lan == 'vi': 
-    google_driver.get(auto_vi)
-    break
-  elif trans_lan == 'zh': 
-    google_driver.get(auto_zh)
-    break    
-  else:
-    print('가능한 언어로 다시 입력해주세요.')
-time.sleep(5)
 
 while papago == True:
   if trans_lan == 'ar':
@@ -195,18 +137,24 @@ while flitto == True:
     break
   else:
     print('가능한 언어로 다시 입력해주세요.')
+
+if google == True:
+  google_driver = googleTranslator(trans_lan)
+time.sleep(5)
     
 if papago == True:
   #Papago 기본 설정
   papago_link = 'https://papago.naver.com'
-  papago_driver = webdriver.Chrome(r'/mnt/c/Users/ccc/Desktop/DATA/DATA_EXTRACT/TED Parsing/chromedriver.exe')
+  papago_driver = webdriver.Chrome(executable_path='/Users/HeewonLee/Desktop/COMPUTER/CODING/chromedriver')
+
   papago_driver.get(papago_link)
   time.sleep(5)
   
 if flitto == True:
   #Flitto 기본 설정
   flitto_link = 'https://www.flitto.com/language/translation/text'
-  flitto_driver = webdriver.Chrome(r'/mnt/c/Users/ccc/Desktop/DATA/DATA_EXTRACT/TED Parsing/chromedriver.exe')
+  flitto_driver = webdriver.Chrome(executable_path='/Users/HeewonLee/Desktop/COMPUTER/CODING/chromedriver')
+
   flitto_driver.get(flitto_link)
   time.sleep(5)
 
@@ -217,7 +165,7 @@ def indexer(file):
     for i in f.read().split('\n'):
       Multi_lines.append(i)
          
-indexer('lines.txt')
+indexer(input('어떤 파일을 번역할까요?'))
   
 trlen = input('몇 줄 씩 번역할까요?(숫자만 입력해 주세요)')
   

@@ -1,6 +1,6 @@
 import openpyxl
 
-wb = openpyxl.load_workbook(input('어떤 파일을 실행할까요?'))
+wb = openpyxl.load_workbook(input('어떤 파일을 실행할까요?')) 
 sheet1 = wb.active 
 
 colname = ['B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']

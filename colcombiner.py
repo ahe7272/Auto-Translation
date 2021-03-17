@@ -1,6 +1,6 @@
 import openpyxl
 
-wb = openpyxl.load_workbook(input('어떤 파일을 실행할까요?'))
+wb = openpyxl.load_workbook(input('어떤 파일을 실행할까요?')) 
 sheet1 = wb.active 
 
 combined = []

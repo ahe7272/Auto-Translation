@@ -59,81 +59,54 @@ while True:
   else:
     print('가능한 옵션을 다시 입력해주세요.')
 
-trans_lan = input('어떤 언어로 번역할까요? (입력 가능 언어: ar(papago불가), de, en, fr, it, ja, ko, mn(papago, flitto불가), ru, sv(papago불가), vi, zh)')
-
-while papago == True:
+while True:
+  trans_lan = input('어떤 언어로 번역할까요? (입력 가능 언어: ar(papago불가), de, en, fr, it, ja, ko, ru, sv(papago불가), vi, zh)')
   if trans_lan == 'ar':
-    print('Papago는 아랍어를 지원하지 않습니다. 프로그램을 종료합니다.')
-    exit()
-  elif trans_lan == 'de':
-    papago_lan = papago_de 
-    break
-  elif trans_lan == 'en':
-    papago_lan = papago_en 
-    break    
-  elif trans_lan == 'fr':
-    papago_lan = papago_fr 
-    break
-  elif trans_lan == 'it':
-    papago_lan = papago_it 
-    break
-  elif trans_lan == 'ja':
-    papago_lan = papago_ja 
-    break
-  elif trans_lan == 'ko':
-    papago_lan = papago_ko 
-    break
-  elif trans_lan == 'mn':
-    print('Papago는  몽골어를 지원하지 않습니다. 프로그램을 종료합니다.')
-    exit()      
-  elif trans_lan == 'ru':
-    papago_lan = papago_ru 
-    break    
-  elif trans_lan == 'vi':
-    papago_lan = papago_vi 
-    break
-  elif trans_lan == 'zh':
-    papago_lan = papago_zh 
-    break
-  else:
-    print('가능한 언어로 다시 입력해주세요.')
-
-while flitto == True:
-  if trans_lan == 'ar':
+    if papago == True:
+      print('Papago는 아랍어를 지원하지 않습니다. 프로그램을 종료합니다.')
+      exit()
     flitto_lan = flitto_ar 
     break
   elif trans_lan == 'de':
+    papago_lan = papago_de 
     flitto_lan = flitto_de 
     break
   elif trans_lan == 'en':
+    papago_lan = papago_en 
     flitto_lan = flitto_en 
     break    
   elif trans_lan == 'fr':
+    papago_lan = papago_fr 
     flitto_lan = flitto_fr 
     break
   elif trans_lan == 'it':
-    flitto_lan = flitto_it 
+    papago_lan = papago_it 
+    flitto_lan = flitto_it
     break
   elif trans_lan == 'ja':
-    flitto_lan = flitto_ja 
+    papago_lan = papago_ja
+    flitto_lan = flitto_ja  
     break
   elif trans_lan == 'ko':
+    papago_lan = papago_ko 
     flitto_lan = flitto_ko 
-    break
-  elif trans_lan == 'mn':
-    print('Flitto는 몽골어를 지원하지 않습니다. 프로그램을 종료합니다.')
-    exit()
+    break 
   elif trans_lan == 'ru':
+    papago_lan = papago_ru
     flitto_lan = flitto_ru 
     break    
   elif trans_lan == 'sv':
+    if papago == True:
+      print('Papago는 스웨덴어를 지원하지 않습니다. 프로그램을 종료합니다.')
+      exit()
     flitto_lan = flitto_sv 
-    break
   elif trans_lan == 'vi':
-    flitto_lan = flitto_vi 
+    papago_lan = papago_vi 
+    flitto_lan = flitto_vi
     break
   elif trans_lan == 'zh':
-    flitto_lan = flitto_zh 
+    papago_lan = papago_zh
+    flitto_lan = flitto_zh  
     break
   else:
     print('가능한 언어로 다시 입력해주세요.')
@@ -145,7 +118,7 @@ time.sleep(5)
 if papago == True:
   #Papago 기본 설정
   papago_link = 'https://papago.naver.com'
-  papago_driver = webdriver.Chrome(executable_path='/Users/HeewonLee/Desktop/COMPUTER/CODING/chromedriver')
+  papago_driver = webdriver.Chrome(r'/mnt/c/Users/ccc/Desktop/DATA/DATA_EXTRACT/TED Parsing/chromedriver.exe')
 
   papago_driver.get(papago_link)
   time.sleep(5)
@@ -153,7 +126,7 @@ if papago == True:
 if flitto == True:
   #Flitto 기본 설정
   flitto_link = 'https://www.flitto.com/language/translation/text'
-  flitto_driver = webdriver.Chrome(executable_path='/Users/HeewonLee/Desktop/COMPUTER/CODING/chromedriver')
+  flitto_driver = webdriver.Chrome(r'/mnt/c/Users/ccc/Desktop/DATA/DATA_EXTRACT/TED Parsing/chromedriver.exe')
 
   flitto_driver.get(flitto_link)
   time.sleep(5)

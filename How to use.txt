@@ -13,14 +13,15 @@ It reads a text file and translates automatically and saves the outcome to excel
 Check your chrome browser version and download chromedriver matching the version.
 
 **Google**
-  -in line 23, 
+  -open googleTranslator.py file and in line 23, 
+
   *Windows*
-  copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
   i.e) (r'YOUR PATH/chromedriver.exe')
   
   *Mac*
-  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
-  i.e) (r'YOUR PATH/chromedriver.exe')
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () with executable_path='' and write chromedirver after the path. 
+  i.e) (executable_path='YOUR PATH/chromedriver')
   
   -When you run the python3 google.py on your terminal it will print a qustion in Korean with language codes. '어떤 언어로 번역할까요? (입력 가능 언어: ar, de, en, fr, it, ja, ko, mn, ru, sv, vi, zh)'(Which language you would like to translate to?). That's asking what language you would want to translate to. So you put in the language code available in the qustion on terminal.
   
@@ -36,12 +37,12 @@ Check your chrome browser version and download chromedriver matching the version
 **papago**
   -in line 55,
   *Windows*
-  copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
   i.e) (r'YOUR PATH/chromedriver.exe')
   
   *Mac*
-  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
-  i.e) (r'YOUR PATH/chromedriver.exe')
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () with executable_path='' and write chromedirver after the path. 
+  i.e) (executable_path='YOUR PATH/chromedriver')
   
   -When you run the python3 papago.py on your terminal it will print a qustion in Korean with language codes. '어떤 언어로 번역할까요? (입력 가능 언어: ar, de, en, fr, it, ja, ko, mn, ru, sv, vi, zh)'(Which language you would like to translate to?). That's asking what language you would want to translate to. So you put in the language code available in the qustion on terminal.
   
@@ -57,12 +58,12 @@ Check your chrome browser version and download chromedriver matching the version
 **flitto**
   -in line 60,
   *Windows*
-  copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
   i.e) (r'YOUR PATH/chromedriver.exe')
   
   *Mac*
-  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
-  i.e) (r'YOUR PATH/chromedriver.exe')
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () with executable_path='' and write chromedirver after the path. 
+  i.e) (executable_path='YOUR PATH/chromedriver')
   
   -When you run the python3 flitto.py on your terminal it will print a qustion in Korean with language codes. '어떤 언어로 번역할까요? (입력 가능 언어: ar, de, en, fr, it, ja, ko, mn, ru, sv, vi, zh)'(Which language you would like to translate to?). That's asking what language you would want to translate to. So you put in the language code available in the qustion on terminal.
   
@@ -78,14 +79,23 @@ Check your chrome browser version and download chromedriver matching the version
 **all_tran**
   it is useful when you want to run 2 or more translator at the same time. 
 
-  -in line 121, 129,
+  -open googleTranslator.py file and in line 23, 
   *Windows*
-  copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
   i.e) (r'YOUR PATH/chromedriver.exe')
   
   *Mac*
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () with executable_path='' and write chromedirver after the path. 
+  i.e) (executable_path='YOUR PATH/chromedriver')
+
+  -open all_tran.py file and in line 121, 129,
+  *Windows*
   open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () and write chromedirver.exe after the path. In the () the path needs to be put inside single quotes in r''
   i.e) (r'YOUR PATH/chromedriver.exe')
+  
+  *Mac*
+  open terminal and go to the directory where chromedirver is in. Then copy and paste your working directory path in the () with executable_path='' and write chromedirver after the path. 
+  i.e) (executable_path='YOUR PATH/chromedriver')
   
   -When you run the python3 all_tran.py on your terminal it will print a qustion in Korean. '어떤 번역기를 사용할까요?(gp:google + papago, gf:google + flitto, pf: papago + flitto  a:all)'(Which translator would like to use?). That's asking what tranlator combination you would want to run.
   
@@ -101,10 +111,15 @@ Check your chrome browser version and download chromedriver matching the version
   -once the translation is finished or interrupted, it will make an excel file with the translated lines. As you can see, you will find it is not saves as one column. You can use colcombiner.py to make it into one column. Please refer to **colcombiner** to combine column. 
   
 **colcombiner**
-  -in line 3, put the excel file name you want to combine columns of.
+  -open terminal and go to the directory where the file you want to combine the columns is in and run python3 colcombiner.py. 
   
-  -Then on terminal enter 'python3 colcombiner.py > combined.txt' to save the combined outcome in to text file. you can change combined.txt to any name as you want on terminal. 
-  
+  -then it will ask question '어떤 파일을 실행할까요?(which file would you like to run?)' you can type your file name with '.xlsx'. Make sure you have no space in the file name so you can type on terminal without issues.
+  i.e) the_file.xlsx
+
+  -Then it will ask question '무슨 이름으로 파일을 저장할까요?(확장명과 같이 입력해 주세요)(what name would you like to save the file as?(please type with extension name)). So you type file name you want to save as. 
+  i.e) the_file.txt 
+
+  -you will see column combined file in the same folder. 
 
 
   

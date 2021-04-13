@@ -20,8 +20,9 @@ def googleTranslator(language):
         'vi' : 'https://translate.google.co.kr/?sl=auto&tl=vi&op=translate',
         'zh' : 'https://translate.google.co.kr/?sl=auto&tl=zh-CN&op=translate'
     }
-    driver  = webdriver.Chrome(executable_path='/Users/HeewonLee/Desktop/COMPUTER/CODING/chromedriver')
+    driver  = webdriver.Chrome(r'/mnt/c/Users/ccc/Desktop/DATA/DATA_EXTRACT/TED Parsing/chromedriver.exe')
     driver.get(urls[language])
+    driver.maximize_window()
 
     return driver  
 

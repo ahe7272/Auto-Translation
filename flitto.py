@@ -68,7 +68,7 @@ def indexer(file):
     for i in f.read().split('\n'):
       Multi_lines.append(i)
          
-indexer('lines.txt')
+indexer(input('파일 이름을 확장명과 함께 입력해 주세요.'))
   
 trlen = input('몇 줄 씩 번역할까요?(숫자만 입력해 주세요)')
 
